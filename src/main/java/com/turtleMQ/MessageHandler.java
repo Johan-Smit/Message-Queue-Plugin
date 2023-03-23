@@ -49,6 +49,8 @@ public class MessageHandler extends Thread {
                 BufferedReader in = new BufferedReader(new InputStreamReader(broker.getInputStream()));
                 String message = in.readLine();
 
+                messageQueue.add(message);
+
                 if (messageReceiver != null)
                     messageReceiver.handle(nextMessage());
                 
@@ -67,6 +69,6 @@ public class MessageHandler extends Thread {
     public String nextMessage() {
         if (messageQueue.isEmpty() == true)
             return null;
-        return messageQueue.peek();
+        return messageQueue.remove();
     }
 }
