@@ -1,4 +1,4 @@
-package com.turtleMQ.nodeconnector.handler;
+package com.turtleMQ;
 
 import java.io.BufferedReader;
 import java.io.IOException;
